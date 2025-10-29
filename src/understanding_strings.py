@@ -12,3 +12,31 @@
         'Le dije a un amigo "Python es mi lenguaje favorito" '
         "El lenguaje 'Python lleva el nombre por Monty Python, no por la serpiente' "
 """
+name = "Clase de programacion"
+print(name)     
+
+# title
+print(name.title())
+
+print(name)
+
+"""
+    Un metodo es una accion que python puede realizar en un fragmento de datos
+o sobre una variable.
+    El punto . depues de una variable 
+seguido de metodo title () dice que se tiene que ejecutar el meotodo tile()
+de la variable name.
+    Todos los metodos van seguidos de parentesis
+porque en ocaciones necesitan informacion adicional para funcionar, la cual iria dentro
+de los parentesis.
+En esta ocacion el metodo .title no requiere informacion adicional para funcionar.
+"""
+print("Metodo upper: ", name.upper())
+print("Metodo lower: ", name.lower())
+
+# Concatenacion de STRINGS 
+first_name= "charly"
+last_name= "mercury"
+full_name= first_name +" "+ last_name
+print(full_name)
+print(full_name.title())
