@@ -68,5 +68,28 @@ print(programming_languages.strip())
 # Synta Error con String
 message= 'Una fortaleza de python es su comunidad'
 print(message)
-message= Una fortaleza de python es su comunidad'
-print(mesage)
+message= 'Una fortaleza de python es su comunidad'
+print(message)
+
+#f-stromgs
+famous_person = "Taylor Swift"
+message= f"{famous_person} una vez dijo me voy al Oxxo en avion"
+print(message)
+
+print (f"{famous_person.upper()} una vez dijo me voy al Oxxo en avion.")
+
+# Actividad
+"""
+    variable 1 -> Elige el nombre de una persona famosa (quien tu quieras)
+    variable 2 -> Elige una cita famosa de esta persona.
+
+    1) Realizar la concatenacion utilizando el signo de suma
+    2) Realizar la concatenacion utilizando fstrings
+"""
+famos_person = "SOn Goku"
+quote= "Hola soy Goku"
+famos_mesage = famos_person+ " "+ quote
+print(famos_person+""+quote)
+print(famos_mesage)
+f_string_message= f"{famos_person} {quote}"
+print(f_string_message) 
