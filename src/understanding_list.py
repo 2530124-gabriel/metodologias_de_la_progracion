@@ -112,29 +112,6 @@ except IndexError as e:
         - remove(): Elimina la primera ocurrencia del valor especificado
 """
 
-print("\n---- Eliminar un elemento por valor (remove) ---")
-# remove(valor) elimina la primera ocurrencia del valor indicado
-fruits = ['manzana', 'banana', 'naranja', 'banana']
-print("Lista inicial:", fruits)
-
-fruits.remove('banana')
-print("Después de remove('banana') (elimina la primera):", fruits)
-
-# remove lanza ValueError si el valor no existe
-try:
-    fruits.remove('uva')
-except ValueError as e:
-    print("Intentar remove('uva') cuando no existe produce:", type(e).__name__)
-
-# Diferencia clave con pop(): remove() elimina por valor, pop() por posición y devuelve el valor eliminado
-print("\nEjemplo comparativo remove() vs pop():")
-items = ['a', 'b', 'c']
-print("items inicial:", items)
-items.remove('b')
-print("Tras remove('b'):", items)
-items = ['a', 'b', 'c']
-removed = items.pop(1)
-print("Tras pop(1) devuelve:", removed, "y lista:", items)
 
 """
     # Listas A-105
@@ -191,3 +168,25 @@ print("motorcycles sigue igual:", motorcycles)
 # Ordenar por longitud de nombre
 motorcycles.sort(key=len)
 print("motorcycles ordenadas por longitud (sort(key=len)):", motorcycles)
+
+
+"""
+Ejemplo: 
+"""
+students = ["jesus", "josue", "andrix", "miguel" ,"jen", "africa"]
+print(students)
+desired_students = input("Ingrese el nombre del estudiante que desea eliminar: ")
+students.remove(desired_students.strip().lower())
+print(students)
+print("Tu has eliminado a ", desired_students)
+students.reverse()
+print(students)
+
+print(len(students))
+
+cars = ["kia", "ford", "tesla", "volvo", "chevrolet"]
+cars.sort()
+print(cars)
+print(sorted(cars))
+sorted_list= sorted(cars)
+print("lista original", cars)
