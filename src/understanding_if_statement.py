@@ -35,3 +35,53 @@ print(age>21) #False
 print(age>=21)#False
 
 #.Multiple conditions
+age_0= 22
+age_1 = 18
+print("Multiples condiciones")
+print("Operacion and - pseint (Y)")
+print(age_0>=21 and age_1 >=21) # False
+print(age_0>=21 and age_1 >=18) # True
+
+print("Operacion or - pseint (0)")
+print(age_0>=21 or age_1 >=21) # True
+print(age_0>=23 or age_1 >=21) # False
+
+# ¿Como nos preguntamos si algun valor esta
+# en una lista?
+requested_topping = ['mushrooms', 'onion', 'pineapple']
+print('mushrooms' in requested_topping) # -> True
+print('pepperoni' in requested_topping) # -> False
+
+# A valued not in a list
+banned_users = ["gabriel", "max", "andrix", 'quevedo', 'cristo', 'angel']
+user = "pedro"
+print(user not in banned_users)
+
+# Variables de tipo booleano
+game_activate = True
+can_edit= False
+
+"""
+    if statement
+
+    if condition:
+        do something
+    
+    if condition:
+        do something (True)
+    else: 
+        do something (False)
+
+"""
+
+# Preguntar la edad del usuario 
+# y decirle si tiene la edad
+# suficiente para votar
+# input("") -> str
+age = int(input("\n\nEscribe tu edad: "))
+print(f"\nTu edad es: {age}")
+
+if age>=18:
+    print("Tienes la edad suficiente para votar")
+else:
+    print("Lo siento, eres demasiado joven para votar")
