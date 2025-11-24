@@ -26,3 +26,37 @@ print(homer_0)
 marge["x-position"]=16
 marge["y-position"]=26
 marge["z-position"]=10
+
+alien_0= {"color": "yellow"}
+print(alien_0['color'])
+
+# Modifying
+alien_0["color"] = "Blue"
+print(alien_0)
+
+# Adding elements to a dictionary
+alien_0["x_position"] = 0
+alien_0["y_position"] = 25
+alien_0["name"]= "Paul"
+
+print(alien_0)
+
+print("\n Looping thought items")
+# Items
+for key, value in alien_0.items():
+    print(f"The key {key}  has value {value}")
+
+#Key
+print("\n Loopin tought key")
+for key in alien_0.keys():
+    print(key)
+
+#Values
+print("\n Looping thought values")
+for value in alien_0.values():
+    print(value)
+
+# NEsting
+#List de diccionary
+# Listas en diccionarios
+# Diccionarios en diccionarios
