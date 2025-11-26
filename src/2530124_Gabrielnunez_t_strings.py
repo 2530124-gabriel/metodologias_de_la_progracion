@@ -76,9 +76,10 @@ else:
 
 print("\nProblem 5: Password strength classifier")
 password= ("gabriel121")
+# Validacion
 if password == "": 
-    print("Contraseña vacia")
-else:
+    print("Contraseña vacia") 
+else: # Clasificacion
     has_upper = False
     has_lower = False
     has_digit = False
@@ -90,12 +91,67 @@ else:
             has_lower = True
         elif ch.isdigit():
             has_digit = True
-        else:
+        else: # Caracter especial
             has_symbol = True
     if has_upper and has_lower and has_digit and has_symbol and len(password) >= 8:
-        print("Contraseña fuerte")
+        print("Contraseña fuerte") # Fuerte
     elif has_upper or has_lower and has_digit and len(password) > 8:
-        print("Contraseña media")
+        print("Contraseña media") # Media
     else:
-        print("Contraseña debil")
- 
+        print("Contraseña debil") # Debil
+
+## Problem 6:  Product label formatter (fixed-width text)
+print("\nProblem 6: Product label formatter")
+product_name = " Cereza ".strip()
+price_value = 5
+
+if product_name == "":
+    print("Nombre de producto invalido")
+else:
+    try:
+        price = float(price_value)
+        if price < 0:
+            print("Precio invalido")
+        else:
+             # Crear etiqueta base
+            label = f"Product: {product_name} | Price: ${price_value}"
+
+            # Recortar si se pasa de 30
+            label = label[:30]
+
+            # Rellenar si es corta
+            while len(label) < 30:
+                label += " "
+
+            print("Label:", f"'{label}'")  # comillas para ver espacios
+    except:
+        print("Precio inválido")
+
+# 8. CONCLUSION
+# El manejo de strings es fundamental en cualquier programa porque casi toda
+# entrada del usuario llega en forma de texto, por eso es necesario limpiarlo
+# con funciones como strip(), lower(), replace() y split(). Normalizar el texto
+# permite comparaciones correctas y evita errores, ya que dos cadenas pueden
+# parecer iguales pero diferir en espacios o mayúsculas. Las validaciones son
+# clave para detectar datos incompletos o incorrectos antes de procesarlos.
+# Además, aprendí que los strings son inmutables, por lo que cada operación
+# genera uno nuevo, y por eso el slicing es útil para extraer o modificar partes
+# específicas sin alterar la cadena original.
+
+
+# 9. REFERENCIAS
+# Python Documentation – Built-in Types: Text Sequence Type (str).
+# https://docs.python.org/3/library/stdtypes.html#text-sequence-type-str
+#
+# Python String Methods – Official Documentation.
+# https://docs.python.org/3/library/stdtypes.html#string-methods
+#
+# Real Python – Working With Strings in Python (Tutorial).
+# https://realpython.com/python-strings/
+#
+# W3Schools – Python String Tutorial.
+# https://www.w3schools.com/python/python_strings.asp
+#
+# Curso de Algoritmos y Programación – Manejo de cadenas y validación de datos.
+# Apuntes académicos sobre buenas prácticas en entrada y limpieza de texto.
+
