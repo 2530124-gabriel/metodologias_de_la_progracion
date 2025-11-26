@@ -60,3 +60,32 @@ for value in alien_0.values():
 #List de diccionary
 # Listas en diccionarios
 # Diccionarios en diccionarios
+
+convenant_grunt = {
+    "color": "orange",
+    "weapon": "plasma-gun",
+    "armament": "plasma-grande",
+    "heath": 2
+}
+convenant_elite = {
+    "color": "orange",
+    "weapon": "plasma-gun",
+    "armament": "plasma-grande",
+    "heath": 7
+}
+convenant_jackal = {
+    "color": "gray",
+    "weapon": "plasma-gun",
+    "armament": "plasma-grande",
+    "heath": 5
+}
+
+convenants= [
+    convenant_grunt,
+    convenant_elite,
+    convenant_jackal
+]
+ for convenant in convenants:
+    print("\n", convenant)
+    for key, value in covenant.items():
+        print(key, value)
