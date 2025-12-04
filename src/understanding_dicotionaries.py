@@ -89,3 +89,34 @@ convenants= [
     print("\n", convenant)
     for key, value in covenant.items():
         print(key, value)
+
+# Lista de diccionarios
+students= {
+    "Santiago": ["reprobado", "prepa1", "rebelde"],
+    "Jorge-crack": ["aprobado", "cbtis 271", "goleador"],
+    "gabriel": ["aprobado", "119muerte", "Elvergon"]
+}
+# Diccionario en diccionarios
+sensores = {
+    'temperatura': {
+        'id': 'temp_1',
+        "location": "aula 105",
+        "value": 25,
+        "unit", "celcius",        
+    }
+    "Humedad": {
+        'id': "hum_1",
+        'location': "aula 103",
+        "value": 65
+        "unit": "porcentaje",
+    }
+}
+
+print("Tempreratura: ")
+print(sensores["Temperatura"]["value"])
+print("location")
+print(sensores)
+
+# while infinito
+while True:
+    number = ini(input("Ingresa un numero: "))

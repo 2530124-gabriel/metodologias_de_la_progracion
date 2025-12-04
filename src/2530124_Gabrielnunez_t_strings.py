@@ -20,6 +20,27 @@ print(formatted_name)
 #### Imprime iniciales
 print("Initials:", initials)
 
+"""
+1) Normal Case
+
+
+Enter full name:   Gabriel de Jesus Nuñez Rodriguez
+Formatted name: Gabriel Nuñez
+Initials: G.D.N.R
+
+2) Border Case (Caso Límite)
+
+Enter full name:   ana     lopez
+Formatted name: Ana Lopez
+Initials: A.L.
+
+Enter full name:    
+Error: Name cannot be empty.
+
+
+"""
+
+
 ## Problem 2: Simple email validator (structure + domain)
 print("\nProblem 2: Simple email validator")
 email_text= (" gabogahi@gmailcom ").strip()
@@ -37,9 +58,25 @@ else:
     else:
         print("true")
 
+"""
+1) Normal Case
+Enter email:   gabogahi@gmail.com
+Valid email: true
+Domain: gmail.com
+2) Border Case (caso límite)
+Enter email:     admin@empresa.org    
+Valid email: true
+Domain: empresa.org
+3) Error Case
+Enter email: pasdf@@mail.com
+Valid email: false
+
+
+"""
+
 ## Problem 3: Palindrome checker (ignoring spaces and case)
 print("\nProblem 3: Palindrome checker")
-palabra= ("pala alap").strip()
+palabra= ("anita lava la tina").strip()
 palabra_sin = palabra.replace(" ", "").lower()
 if palabra_sin == palabra_sin[::-1]:
     print("Es un palindromo")
@@ -48,6 +85,27 @@ elif len(palabra_sin) < 3:
 else:
     #Salida
     print("No es un palindromo")
+
+"""
+    1) Normal Case (frase palíndroma válida)
+   
+Enter a phrase: Anita lava la tina
+Is palindrome: true
+Normalized phrase: anitalavalatina
+    2) Border Case (caso límite)
+ 
+Enter a phrase: oso
+Is palindrome: true
+Normalized phrase: oso
+   3) Error Case
+
+Enter a phrase: hola mundo
+Is palindrome: false
+Normalized phrase: holamundo
+
+
+
+"""
 
 ##  Problem 4: Sentence word stats (lengths and first/last word)
 print("\nProblem 4: Sentence word stats")
@@ -71,6 +129,30 @@ else:
     print("Palabra mas larga:", longest_word)
     print("Primera palabra:", palabras[0])
     print("Ultima palabra:", palabras[-1])
+
+    
+"""
+    1) Normal Case (oración válida)
+Enter a sentence: La vida es bella
+Word count: 4
+First word: La
+Last word: bella
+Shortest word: es
+Longest word: bella
+
+2) Border Case (caso límite: una sola palabra)
+
+Word count: 1
+First word: hola
+Last word: hola
+Shortest word: hola
+Longest word: hola
+
+3) Error Case (entrada vacía)
+Enter a sentence:
+Error: Sentence cannot be empty.
+"""
+
 
 ##  Problem 5: Password strength classifier
 
@@ -99,7 +181,25 @@ else: # Clasificacion
         print("Contraseña media") # Media
     else:
         print("Contraseña debil") # Debil
+"""
+1) Normal Case (contraseña fuerte)
 
+Enter password: Abc333!@
+Password strength: strong
+
+2) Border Case (caso límite: longitud = 8 pero sin símbolos → medium)
+
+Enter password: Abc12345
+Password strength: medium
+
+3) Error Case (contraseña vacía → weak)
+
+ESnter password:
+Password strength: weak
+
+
+
+"""
 ## Problem 6:  Product label formatter (fixed-width text)
 print("\nProblem 6: Product label formatter")
 product_name = " Cereza ".strip()
@@ -126,6 +226,24 @@ else:
             print("Label:", f"'{label}'")  # comillas para ver espacios
     except:
         print("Precio inválido")
+"""
+1) Normal Case (producto y precio válidos)
+Enter product name: Cereza
+Enter price: 5
+Label: 'Product: Cereza | Price: $5   '
+
+2) Border Case (etiqueta exactamente de 30 caracteres)
+Enter product name: Pan
+Enter price: 10
+Label: 'Product: Pan | Price: $10      '
+
+3) Error Case (precio inválido)
+Enter product name: Refresco
+Enter price: abc
+Error: Invalid price format.
+
+
+"""
 
 # 8. CONCLUSION
 # El manejo de strings es fundamental en cualquier programa porque casi toda
