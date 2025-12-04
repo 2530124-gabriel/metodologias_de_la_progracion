@@ -1,28 +1,512 @@
-#  Problem 1: Sum of range with for 
-user_input = input("Ingresa un valor para n: ")
+# Gabriel de Jesus Nuñez Rodriguez
+# 2530124
+# IM- 3
+## RESUMEN EJECUTIVO
+"""
+ Un bucle for se usa para repetir acciones un número conocido de veces o para recorrer listas.
+ El bucle while es más natural cuando la repetición depende de una condición que puede cambiar durante la ejecución.
+ Un contador sirve para llevar cuántas veces pasa algo, y un acumulador para ir sumando valores progresivamente.
+ Definir bien la condición de salida evita ciclos infinitos que pueden congelar el programa.
+ Este documento incluirá la descripción de cada problema, las entradas y salidas esperadas,
+ las validaciones necesarias y el uso adecuado de for y while en recorridos, menús
+ y lectura repetida de datos según la situación del programa.
 
-# Validación 1: verificar si puede convertirse a int
+
+"""
+
+# Problem 1: Sum of range with for
+print("Problem 1: Sum of range with for")
 try:
-    n = int(user_input)
+    n = int(input("Enter n: "))
+
+    if n < 1:
+        print("Error: invalid input")
+    else:
+        total_sum = 0
+        even_sum = 0
+
+        # Recorremos de 1 a n usando for
+        for number in range(1, n + 1):
+            total_sum += number
+
+            if number % 2 == 0:
+                even_sum += number
+
+        print("Sum 1..n:", total_sum)
+        print("Even sum 1..n:", even_sum)
+
 except:
     print("Error: invalid input")
-    exit()
 
-# Validación 2: n debe ser >= 1
-if n < 1:
+# caso de prueba
+#  Caso Normal
+"""
+Entrada:
+
+Enter n: 10
+
+
+Proceso esperado:
+
+Suma total: 1 + 2 + ... + 10 = 55
+
+Suma pares: 2 + 4 + 6 + 8 + 10 = 30
+
+Salida esperada:
+
+Sum 1..n: 55
+Even sum 1..n: 30
+"""
+#  Caso Borde límite mínimo válido
+"""
+Entrada:
+
+Enter n: 1
+
+
+Proceso esperado:
+
+Suma total: 1
+
+Suma pares: 0 (ningún número par)
+
+Salida esperada:
+
+Sum 1..n: 1
+Even sum 1..n: 0
+"""
+# 3. Caso Error
+"""
+A) Número inválido (n < 1)
+
+Entrada:
+
+Enter n: 0
+
+
+Salida esperada:
+
+Error: invalid input
+
+B) Formato inválido (cae en el except)
+
+Entrada:
+
+Enter n: hola
+
+
+Salida esperada:
+
+Error: invalid input
+
+"""
+
+
+# Problem 2: Multiplication table with for
+print("\nProblem 2: Multiplication table with for")
+try:
+    base = int(input("Enter base: "))
+    m = int(input("Enter limit m: "))
+
+    if m < 1:
+        print("Error: invalid input")
+    else:
+        for i in range(1, m + 1):
+            product = base * i
+            print(f"{base} x {i} = {product}")
+
+except:
     print("Error: invalid input")
-    exit()
 
-# Acumuladores
-total_sum = 0
-even_sum = 0
+# casos de pruebas
+# Caso Normal
+"""
+Entrada:
 
-# Bucle for para sumar
-for i in range(1, n + 1):
-    total_sum += i
-    if i % 2 == 0:
-        even_sum += i
+Enter base: 5
+Enter limit m: 4
 
-# Salidas
-print("Sum 1..n:", total_sum)
-print("Even sum 1..n:", even_sum)
+
+Salida esperada:
+
+5 x 1 = 5
+5 x 2 = 10
+5 x 3 = 15
+5 x 4 = 20
+"""
+# Caso Borde (límite mínimo válido)
+"""
+Entrada:
+
+Enter base: 7
+Enter limit m: 1
+
+
+Salida esperada:
+
+7 x 1 = 7
+"""
+# Caso Error
+"""
+A) m inválido (menor que 1)
+
+Entrada:
+
+Enter base: 5
+Enter limit m: 0
+
+
+Salida esperada:
+
+Error: invalid input
+
+B) Formato inválido (cae en el except)
+
+Entrada:
+
+Enter base: hola
+Enter limit m: 5
+
+
+Salida esperada:
+
+Error: invalid input
+"""
+
+
+# Problem 3: Average of numbers with while and sentinel
+
+print("\nProblem 3: Average of numbers with while and sentinel")
+sentinel_value = -1
+
+total_sum = 0.0
+count = 0
+
+while True:
+    user_input = input("Enter a number (-1 to stop): ")
+
+    # Validación de conversión a float
+    try:
+        number = float(user_input)
+    except ValueError:
+        print("Error: invalid input")
+        continue
+
+    # Revisar sentinela
+    if number == sentinel_value:
+        break
+
+    # Acumular valores válidos
+    total_sum += number
+    count += 1
+
+# Verificar si hubo datos
+if count == 0:
+    print("Error: no data")
+else:
+    average_value = total_sum / count
+    print("Count:", count)
+    print("Average:", average_value)
+
+# casos de pruebas 
+# Caso normal
+"""
+Entrada:
+
+10
+5
+3
+-1
+
+
+Proceso:
+
+Suma: 10 + 5 + 3 = 18
+
+Count = 3
+
+Promedio = 18 / 3 = 6
+
+Salida esperada:
+
+Count: 3
+Average: 6.0
+"""
+# Caso borde (solo un número válido antes del sentinela)
+"""
+Entrada:
+
+8
+-1
+
+
+Salida esperada:
+
+Count: 1
+Average: 8.0
+"""
+# Caso error (no se ingresan datos válidos antes del sentinela)
+""""
+Entrada:
+
+-1
+
+
+Salida esperada:
+
+Error: no data
+"""
+# Problem 4: Password attempts with while
+print("\nProblem 4: Password attempts with while")
+CORRECT_PIN = "1234"
+MAX_ATTEMPTS = 3
+attempts = 0
+
+while attempts < MAX_ATTEMPTS:
+    user_pin = input("Por favor ingresa tu PIN: ")
+
+    if user_pin == CORRECT_PIN:
+        print("Acceso concedido. Bienvenido!")
+        break
+    else:
+        attempts += 1
+        remaining_attempts = MAX_ATTEMPTS - attempts
+
+        if remaining_attempts > 0:
+            print("Ingresa un PIN no válido")
+            print(f"PIN incorrecto. Te quedan {remaining_attempts} intentos.")
+        else:
+            print("Cuenta bloqueada por demasiados intentos fallidos.")
+
+# Caso normal (acierta antes de agotar):
+"""
+Intento 1: hola -> "Código mal, te faltan 2 intentos"
+Intento 2: admin123 -> "Login success"
+"""
+
+# Caso borde (acierta en el último intento):
+"""
+Intento 1: 111 -> "Código mal, te faltan 2 intentos"
+Intento 2: 222 -> "Código mal, te falta 1 intento"
+Intento 3: admin123 -> "Login success"
+"""
+
+# Caso error (agota intentos):
+"""
+Intento 1: a -> "Código mal, te faltan 2 intentos"
+Intento 2: b -> "Código mal, te falta 1 intento"
+Intento 3: c -> (luego) "Account locked"
+"""
+
+
+# Problem 5: Simple menu with while
+print("\nProblem 5: Simple menu with while")
+counter = 0
+
+while True:
+    print("------ MENU ------")
+    print("1) Show greeting")
+    print("2) Show current counter value")
+    print("3) Increment counter")
+    print("0) Exit")
+    print("------------------")
+
+    option_text = input("Choose an option: ").strip()
+
+    # Validación: intentar convertir a int
+    try:
+        option = int(option_text)
+    except:
+        print("Error: invalid option\n")
+        continue
+
+    # Validar opción válida
+    if option not in (0, 1, 2, 3):
+        print("Error: invalid option\n")
+        continue
+
+    # Acciones del menú
+    if option == 1:
+        print("Hello!\n")
+    elif option == 2:
+        print(f"Counter: {counter}\n")
+    elif option == 3:
+        counter += 1
+        print("Counter incremented\n")
+    elif option == 0:
+        print("Bye!")
+        break
+
+# CASOS DE PRUEBA
+# Caso Normal
+"""
+Entrada simulada del usuario:
+
+1
+2
+3
+2
+0
+
+
+Salida esperada:
+
+Hello!
+Counter: 0
+Counter incremented
+Counter: 1
+Bye!
+"""
+# Caso Borde (opción mínima y máxima válidas)
+"""
+Entrada:
+
+3
+3
+3
+0
+
+
+Salida esperada:
+
+Counter incremented
+Counter incremented
+Counter incremented
+Bye!
+
+
+(Caso borde porque solo usa los extremos: incrementa varias veces y luego sale.)
+"""
+# Caso Error (opciones inválidas y valores no numéricos)
+"""
+Entrada:
+
+hola
+9
+-2
+2
+0
+
+
+Salida esperada:
+
+Error: invalid option
+Error: invalid option
+Error: invalid option
+Counter: 0
+Bye!
+"""
+
+# Problem 6: Pattern printing with nested loop
+print("\nProblem 6: Pattern printing with nested loop")
+try:
+    n = int(input("Enter number of rows: "))
+
+    if n < 1:
+        print("Error: invalid input")
+    else:
+        # Patrón normal
+        print("Normal pattern:")
+        for i in range(1, n + 1):
+            print("*" * i)
+
+        # Patrón invertido (opcional)
+        print("Inverted pattern (optional):")
+        for i in range(n, 0, -1):
+            print("*" * i)
+
+except:
+    print("Error: invalid input")
+
+# casos de prueba (normal, borde y error)
+#) Caso Normal
+""""
+Entrada:
+
+4
+
+
+Salida esperada:
+
+Normal pattern:
+*
+**
+***
+****
+Inverted pattern (optional):
+****
+***
+**
+*
+"""
+# Caso Borde
+"""
+Entrada:
+
+1
+
+
+Salida esperada:
+
+Normal pattern:
+*
+Inverted pattern (optional):
+*
+
+
+(Borde porque n está en el mínimo permitido.)
+"""
+# Caso Error
+"""
+Entrada:
+
+0
+
+
+Salida esperada:
+
+Error: invalid input
+
+
+Otro error posible:
+
+hola
+
+
+Salida:
+
+Error: invalid input
+"""
+
+# CONCLUSIÓN
+"""
+Los bucles en Python son herramientas fundamentales que permiten ejecutar un bloque de código repetidamente, 
+facilitando tareas que requieren iteración. Tanto for como while ofrecen formas flexibles de recorrer datos, repetir acciones y automatizar procesos 
+que serían tediosos de realizar manualmente. Gracias a ellos podemos procesar listas, generar secuencias, validar datos y controlar flujos complejos 
+dentro de un programa. Comprender cómo funcionan y cuándo utilizar cada tipo de bucle es esencial para escribir código eficiente, legible y 
+adaptable a muchos tipos de problemas en programación.
+
+"""
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
