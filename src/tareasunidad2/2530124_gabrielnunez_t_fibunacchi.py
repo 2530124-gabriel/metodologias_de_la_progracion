@@ -68,3 +68,28 @@ for _ in range(3, n + 1):
 
 # Salida
 print("Fibonacci series:", *fibonacci)
+
+
+
+# CONCLUSION
+# El uso de un bucle facilitó la generación de la serie de Fibonacci,
+# ya que permitió calcular cada término a partir de los dos anteriores
+# de manera ordenada y repetitiva. Es importante manejar correctamente
+# los casos especiales n = 1 y n = 2 para asegurar salidas válidas y
+# evitar errores en la lógica. Esta estructura puede reutilizarse en
+# otros programas que requieran generar secuencias numéricas o procesos
+# iterativos basados en valores previos.
+
+
+# REFERENCES
+# 1) Python Software Foundation – Python Documentation:
+#    "Control Flow Tools: for and while loops"
+#    https://docs.python.org/3/tutorial/controlflow.html
+#
+# 2) Real Python – "Fibonacci Sequence in Python"
+#    (Guías y explicaciones sobre algoritmos y secuencias)
+#    https://realpython.com
+#
+# 3) Apuntes de clase – Unidad sobre ciclos, validaciones
+#    y generación de secuencias numéricas.
+
